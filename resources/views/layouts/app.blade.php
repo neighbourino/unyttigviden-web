@@ -27,16 +27,16 @@
 <body class="min-h-screen bg-gray-50 dark:bg-zinc-800">
 
     <flux:header sticky
-        class="bg-white dark:bg-zinc-900 max-w-7xl mx-auto w-full border-l border-r border-zinc-100 dark:border-zinc-700 z-50 border-b rounded-b">
+        class="bg-white dark:bg-zinc-900 border-zinc-100 dark:border-zinc-700 z-20  w-full border-b rounded-b  border-l border-r shadow-sm">
         <flux:sidebar.toggle class="lg:hidden" icon="bars-2" inset="left" />
 
-        <flux:brand href="{{ route('welcome') }}" logo="{{ asset('images/logo.png') }}"
-            name="{{ config('app.name', 'Laravel') }}" class="max-lg:hidden dark:hidden" href="/" />
-        <flux:brand href="{{ route('welcome') }}" logo="{{ asset('images/dark-mode-logo.png') }}"
-            name="{{ config('app.name', 'Laravel') }}" class="max-lg:!hidden hidden dark:flex" href="/" />
+        <div class="container  flex justify-between items-center ">
+            <flux:brand href="{{ route('welcome') }}" logo="{{ asset('images/logo.png') }}"
+                name="{{ config('app.name', 'Laravel') }}" class="max-lg:hidden dark:hidden" href="/" />
+            <flux:brand href="{{ route('welcome') }}" logo="{{ asset('images/dark-mode-logo.png') }}"
+                name="{{ config('app.name', 'Laravel') }}" class="max-lg:!hidden hidden dark:flex" href="/" />
 
 
-        @if (config('app.env') !== 'production')
             <flux:navbar class="-mb-px max-lg:hidden">
                 <flux:navbar.item href="#features">Funktioner</flux:navbar.item>
                 {{-- s
@@ -72,8 +72,7 @@
                     </svg>
                 </a> --}}
             </flux:navbar>
-        @endif
-
+        </div>
     </flux:header>
 
 
@@ -89,7 +88,7 @@
 
     </flux:sidebar>
 
-    <flux:main container class="bg-white dark:bg-zinc-900 border-l border-r border-zinc-100 dark:border-zinc-700">
+    <flux:main class="bg-white dark:bg-zinc-900 border-l border-r border-zinc-100 dark:border-zinc-700">
         {{ $slot }}
 
         @if (1 == 2)
